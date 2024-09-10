@@ -14,7 +14,10 @@ void cw2()
     Console.WriteLine($"{a} + {b} = {a + b}");
     Console.WriteLine($"{a} - {b} = {a - b}");
     Console.WriteLine($"{a} * {b} = {a * b}");
-    Console.WriteLine($"{a} / {b} = {(float)a / b}");
+    if (b != 0)
+        Console.WriteLine($"{a} / {b} = {(float)a / b}");
+    else
+        Console.WriteLine($"{a} / {b} = BRAK WYNIKU");
 }
 // cw1();
 cw2();
