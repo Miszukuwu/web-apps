@@ -4,8 +4,7 @@
     Console.WriteLine($"Liczba {a} do potęgi wynosi {a*a}");
 }
 
-void cw2()
-{
+void cw2(){
     int a, b;
     Console.WriteLine("Podaj a: ");
     a = Convert.ToInt32(Console.ReadLine());
@@ -19,5 +18,15 @@ void cw2()
     else
         Console.WriteLine($"{a} / {b} = BRAK WYNIKU");
 }
+
+void cw3(){
+    int a;
+    Console.WriteLine("Podaj a:");
+    a = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine((a < 0)
+        ? "Nie można pierwiastkować liczby mniejszej niż 0"
+        : $"Pierwiastek liczby {a} wynosi {Math.Sqrt(a)}");
+}
 // cw1();
-cw2();
+// cw2();
+cw3();
