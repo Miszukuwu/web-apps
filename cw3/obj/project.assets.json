@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Egzamin\\Desktop\\webApps\\cw3\\cw3.csproj",
+      "projectUniqueName": "C:\\Users\\Egzamin\\Documents\\webApps\\cw3\\cw3.csproj",
       "projectName": "cw3",
-      "projectPath": "C:\\Users\\Egzamin\\Desktop\\webApps\\cw3\\cw3.csproj",
+      "projectPath": "C:\\Users\\Egzamin\\Documents\\webApps\\cw3\\cw3.csproj",
       "packagesPath": "C:\\Users\\Egzamin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Egzamin\\Desktop\\webApps\\cw3\\obj\\",
+      "outputPath": "C:\\Users\\Egzamin\\Documents\\webApps\\cw3\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Egzamin\\AppData\\Roaming\\NuGet\\NuGet.Config"
