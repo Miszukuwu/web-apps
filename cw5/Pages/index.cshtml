@@ -1,4 +1,5 @@
 ﻿@page
+@using cw5.Models
 @model cw5.Pages.index
 <!DOCTYPE html>
 <html lang="pl">
@@ -11,6 +12,11 @@
 <div>
     Dzisiaj mamy - @DateTime.Now.ToLongDateString()
 </div>
+<ul>
+    @foreach (Person person in Model.people) {
+        <li>@person.FirstName</li>
+    }
+</ul>
 <div id="root"></div>
 <script src="~/index.js" defer></script>
 </body>

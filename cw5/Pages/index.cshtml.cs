@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 namespace cw5.Pages;
 
 public class index : PageModel {
-    List<Person> people = new List<Person>();
+    public List<Person> people = new List<Person>();
     public void OnGet(){
         people = GetPersons();
     }

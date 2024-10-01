@@ -1,0 +1,12 @@
+﻿body{
+    background-color: dimgray;
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+div{
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 10px;
+    width: 50vw;
+}

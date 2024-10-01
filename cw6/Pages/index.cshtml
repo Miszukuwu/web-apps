@@ -1,0 +1,36 @@
+﻿@page
+@using cw6.Models
+@model cw6.Pages.index
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Index 1</title>
+    <link rel="stylesheet" href="~/style.css">
+</head>
+<body>
+<div>
+    <h1>Index 1</h1>
+    <table>
+        <tr>
+            <th>Imię</th>
+            <th>Nazwisko</th>
+            <th>Wiek</th>
+        </tr>
+        @foreach (Person person in @Model.People) {
+            <tr>
+                <td>@person.FirstName</td>
+                <td>@person.LastName</td>
+                <td>@person.Age</td>
+            </tr>
+        }
+    </table>
+    <select onchange="colorChange()">
+        @foreach (string color in @Model.ColorList) {
+            <option value="@color">@color</option>
+        }
+    </select>
+    <button onclick="buttonClick()">Guzik</button>
+    <script src="~/script.js" defer></script>
+</div>
+</body>
+</html>
