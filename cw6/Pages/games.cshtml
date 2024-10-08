@@ -1,0 +1,43 @@
+﻿@page
+@model cw6.Pages.GamesModel
+
+@{
+Layout = null;
+}
+<!doctype html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ćwiczenie 6</title>
+    <link rel="stylesheet" href="~/style.css">
+</head>
+<body>
+<h1>Lista Gier</h1>
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Tytuł</th>
+        <th>Producent</th>
+        <th>Rok Produkcji</th>
+        <th>Gatunek</th>
+        <th>Cena</th>
+    </tr>
+    @{ int lp = 0;}
+    @foreach (var game in Model.Games) {
+        lp++;
+        <tr>
+            <td>@lp</td>
+            <td>@game.Title</td>
+            <td>@game.Publisher</td>
+            <td>@game.ReleaseDate</td>
+            <td>@game.Genre</td>
+            <td>@game.Price</td>
+        </tr>
+    }
+</table>
+<a href="/movies">Filmy</a>
+</body>
+</html>
