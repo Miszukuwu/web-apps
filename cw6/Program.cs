@@ -5,6 +5,5 @@ var app = builder.Build();
 
 app.UseStaticFiles();
 app.MapRazorPages();
-app.MapGet("/", () => "Hello World!");
 
 app.Run();

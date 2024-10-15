@@ -1,8 +1,8 @@
 ﻿@page
-@model cw6.Pages.GamesModel
+@model cw6.Pages.MoviesModel
 
 @{
-Layout = null;
+    Layout = null;
 }
 <!doctype html>
 <html lang="pl">
@@ -15,29 +15,30 @@ Layout = null;
     <link rel="stylesheet" href="~/style.css">
 </head>
 <body>
-<h1>Lista Gier</h1>
+<h1>Lista filmów</h1>
 <table>
     <tr>
         <th>Id</th>
         <th>Tytuł</th>
-        <th>Producent</th>
+        <th>Reżyser</th>
         <th>Rok Produkcji</th>
         <th>Gatunek</th>
         <th>Cena</th>
     </tr>
     @{ int lp = 0;}
-    @foreach (var game in Model.Games) {
+    @foreach (var movie in Model.Movies) {
         lp++;
         <tr>
             <td>@lp</td>
-            <td>@game.Title</td>
-            <td>@game.Publisher</td>
-            <td>@game.ReleaseDate</td>
-            <td>@game.Genre</td>
-            <td>@game.Price</td>
+            <td>@movie.Title</td>
+            <td>@movie.Director</td>
+            <td>@movie.ReleaseDate</td>
+            <td>@movie.Genre</td>
+            <td>@movie.Price $</td>
         </tr>
     }
 </table>
-<a href="/movies">Filmy</a>
+<a asp-page="Games">Gry</a>
+<a asp-page="AddMovie">Dodaj Film</a>
 </body>
 </html>
