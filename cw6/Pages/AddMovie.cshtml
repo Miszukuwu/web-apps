@@ -1,5 +1,5 @@
 ﻿@page
-@model cw6.Pages.AddMovie
+@model cw6.Pages.AddMovieModel
 <!doctype html>
 <html lang="pl">
 <head>
@@ -12,7 +12,7 @@
 </head>
 <body>
 <h1>Dodaj nowy film</h1>
-<form asp-page="AddMovie">
+<form asp-page="AddMovie" method="post">
     <div class="row m-3">
         <label class="col-1" asp-for="@Model.MyMovie.Title"></label>
         <input class="col-6" asp-for="@Model.MyMovie.Title">
@@ -28,11 +28,17 @@
         <input class="col-6" asp-for="@Model.MyMovie.ReleaseDate">
         <span asp-validation-for="@Model.MyMovie.ReleaseDate" class="text-danger"></span>
     </div>
-    <div class="row m-3">
-        <label class="col-1" asp-for="@Model.MyMovie.Genre"></label>
-        <input class="col-6" asp-for="@Model.MyMovie.Genre">
-        <span asp-validation-for="@Model.MyMovie.Genre" class="text-danger"></span>
-    </div>
+<div class="row m-3">
+            <label class="col-1 text-end" asp-for="@Model.MyMovie.Genre"></label>
+            <select class="col-6" asp-for="@Model.MyMovie.Genre" >
+                @if (ViewData["Genres"] != null){
+                    @foreach(var genre in ViewData["Genres"] as List<string>)
+                    {
+                        <option value="@genre">@genre</option>
+                    }
+                }
+            </select>
+        </div>
     <div class="row m-3">
         <label class="col-1" asp-for="@Model.MyMovie.Price"></label>
         <input class="col-6" asp-for="@Model.MyMovie.Price">
@@ -42,5 +48,11 @@
         <input type="submit" value="Dodaj" class="offset-1 col-6 btn btn-primary">
     </div>
 </form>
+<div>
+    <a asp-page="Movies">Powrót do strony głównej</a>
+</div>
+<div>
+    @ViewData["Message"]
+</div>
 </body>
 </html>
