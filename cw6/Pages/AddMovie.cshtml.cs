@@ -12,7 +12,7 @@ public class AddMovieModel : PageModel {
         ViewData["Genres"] = Genres;
         ViewData["Message"] = "Dopiero wywitlamy formularz";
     }
-    public IActionResult onPost(){
+    public IActionResult OnPost(){
         ViewData["Genres"] = Genres;
         if (MyMovie == null){
             ViewData["Message"] = "Brak danych";
