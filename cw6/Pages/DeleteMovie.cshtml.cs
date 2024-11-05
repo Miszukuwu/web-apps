@@ -15,7 +15,7 @@ namespace cw6.Pages
                 if(movie != null)
                      _repo.DeleteMovie(movie);
             }
-            return RedirectToPage("Index");
+            return RedirectToPage("Movies");
            
         }
     }

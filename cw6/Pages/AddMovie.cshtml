@@ -15,17 +15,17 @@
 <form asp-page="AddMovie" method="post">
     <div class="row m-3">
         <label class="col-1" asp-for="@Model.MyMovie.Title"></label>
-        <input class="col-6" asp-for="@Model.MyMovie.Title">
+        <input class="col-6" type="text" asp-for="@Model.MyMovie.Title">
         <span asp-validation-for="@Model.MyMovie.Title" class="text-danger"></span>
     </div>
     <div class="row m-3">
         <label class="col-1" asp-for="@Model.MyMovie.Director"></label>
-        <input class="col-6" asp-for="@Model.MyMovie.Director">
+        <input class="col-6" type="text" asp-for="@Model.MyMovie.Director">
         <span asp-validation-for="@Model.MyMovie.Director" class="text-danger"></span>
     </div>
     <div class="row m-3">
         <label class="col-1" asp-for="@Model.MyMovie.ReleaseDate"></label>
-        <input class="col-6" asp-for="@Model.MyMovie.ReleaseDate">
+        <input class="col-6" type="date" asp-for="@Model.MyMovie.ReleaseDate">
         <span asp-validation-for="@Model.MyMovie.ReleaseDate" class="text-danger"></span>
     </div>
 <div class="row m-3">
@@ -41,7 +41,7 @@
         </div>
     <div class="row m-3">
         <label class="col-1" asp-for="@Model.MyMovie.Price"></label>
-        <input class="col-6" asp-for="@Model.MyMovie.Price">
+        <input class="col-6" type="number" asp-for="@Model.MyMovie.Price">
         <span asp-validation-for="@Model.MyMovie.Price" class="text-danger"></span>
     </div>
     <div class="row m-3">

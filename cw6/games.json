@@ -1,82 +1,130 @@
-﻿  [
-    {
-        "Id": 1,
-        "Title": "The Witcher 3: Wild Hunt",
-        "Price": 29,
-        "Genre": "RPG",
-        "Publisher": "CD Projekt",
-        "ReleaseDate": "2015-05-19"
-    },
-    {
-        "Id": 2,
-        "Title": "Cyberpunk 2077",
-        "Price": 59,
-        "Genre": "RPG",
-        "Publisher": "CD Projekt",
-        "ReleaseDate": "2020-12-10"
-    },
-    {
-        "Id": 3,
-        "Title": "Red Dead Redemption 2",
-        "Price": 39,
-        "Genre": "Action",
-        "Publisher": "Rockstar Games",
-        "ReleaseDate": "2018-10-26"
-    },
-    {
-        "Id": 4,
-        "Title": "The Legend of Zelda: Breath of the Wild",
-        "Price": 59,
-        "Genre": "Adventure",
-        "Publisher": "Nintendo",
-        "ReleaseDate": "2017-03-03"
-    },
-    {
-        "Id": 5,
-        "Title": "God of War",
-        "Price": 49,
-        "Genre": "Action",
-        "Publisher": "Sony Interactive Entertainment",
-        "ReleaseDate": "2018-04-20"
-    },
-    {
-        "Id": 6,
-        "Title": "Hades",
-        "Price": 24,
-        "Genre": "Roguelike",
-        "Publisher": "Supergiant Games",
-        "ReleaseDate": "2020-09-17"
-    },
-    {
-        "Id": 7,
-        "Title": "Minecraft",
-        "Price": 26,
-        "Genre": "Sandbox",
-        "Publisher": "Mojang",
-        "ReleaseDate": "2011-11-18"
-    },
-    {
-        "Id": 8,
-        "Title": "Among Us",
-        "Price": 5,
-        "Genre": "Party",
-        "Publisher": "Innersloth",
-        "ReleaseDate": "2018-06-15"
-    },
-    {
-        "Id": 9,
-        "Title": "Stardew Valley",
-        "Price": 15,
-        "Genre": "Simulation",
-        "Publisher": "ConcernedApe",
-        "ReleaseDate": "2016-02-26"
-    },
-    {
-        "Id": 10,
-        "Title": "DOOM Eternal",
-        "Price": 59,
-        "Genre": "Shooter",
-        "Publisher": "Bethesda Softworks",
-        "ReleaseDate": "2020-03-20"
-    }
+[
+  {
+    "Id": 1,
+    "Title": "The Witcher 3: Wild Hunt",
+    "Price": 29,
+    "Genre": "RPG",
+    "Publisher": "CD Projekt",
+    "ReleaseDate": "2015-05-19"
+  },
+  {
+    "Id": 2,
+    "Title": "Cyberpunk 2077",
+    "Price": 59,
+    "Genre": "RPG",
+    "Publisher": "CD Projekt",
+    "ReleaseDate": "2020-12-10"
+  },
+  {
+    "Id": 3,
+    "Title": "Red Dead Redemption 2",
+    "Price": 39,
+    "Genre": "Action",
+    "Publisher": "Rockstar Games",
+    "ReleaseDate": "2018-10-26"
+  },
+  {
+    "Id": 4,
+    "Title": "The Legend of Zelda: Breath of the Wild",
+    "Price": 59,
+    "Genre": "Adventure",
+    "Publisher": "Nintendo",
+    "ReleaseDate": "2017-03-03"
+  },
+  {
+    "Id": 5,
+    "Title": "God of War",
+    "Price": 49,
+    "Genre": "Action",
+    "Publisher": "Sony Interactive Entertainment",
+    "ReleaseDate": "2018-04-20"
+  },
+  {
+    "Id": 6,
+    "Title": "Hades",
+    "Price": 24,
+    "Genre": "Roguelike",
+    "Publisher": "Supergiant Games",
+    "ReleaseDate": "2020-09-17"
+  },
+  {
+    "Id": 7,
+    "Title": "Minecraft",
+    "Price": 26,
+    "Genre": "Sandbox",
+    "Publisher": "Mojang",
+    "ReleaseDate": "2011-11-18"
+  },
+  {
+    "Id": 8,
+    "Title": "Among Us",
+    "Price": 5,
+    "Genre": "Party",
+    "Publisher": "Innersloth",
+    "ReleaseDate": "2018-06-15"
+  },
+  {
+    "Id": 9,
+    "Title": "Stardew Valley",
+    "Price": 15,
+    "Genre": "Simulation",
+    "Publisher": "ConcernedApe",
+    "ReleaseDate": "2016-02-26"
+  },
+  {
+    "Id": 10,
+    "Title": "DOOM Eternal",
+    "Price": 59,
+    "Genre": "Shooter",
+    "Publisher": "Bethesda Softworks",
+    "ReleaseDate": "2020-03-20"
+  },
+  {
+    "Id": 11,
+    "Title": "Ultrakill",
+    "Price": 30,
+    "Genre": "Shooter",
+    "Publisher": "New Blood",
+    "ReleaseDate": "2077-10-23"
+  },
+  {
+    "Id": 12,
+    "Title": null,
+    "Price": null,
+    "Genre": "RPG",
+    "Publisher": null,
+    "ReleaseDate": null
+  },
+  {
+    "Id": 13,
+    "Title": null,
+    "Price": null,
+    "Genre": "RPG",
+    "Publisher": null,
+    "ReleaseDate": null
+  },
+  {
+    "Id": 14,
+    "Title": null,
+    "Price": null,
+    "Genre": "RPG",
+    "Publisher": null,
+    "ReleaseDate": null
+  },
+  {
+    "Id": 15,
+    "Title": null,
+    "Price": null,
+    "Genre": "RPG",
+    "Publisher": null,
+    "ReleaseDate": null
+  },
+  {
+    "Id": 16,
+    "Title": null,
+    "Price": null,
+    "Genre": "RPG",
+    "Publisher": null,
+    "ReleaseDate": null
+  }
 ]

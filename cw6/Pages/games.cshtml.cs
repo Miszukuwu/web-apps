@@ -8,7 +8,7 @@ public class GamesModel : PageModel {
     GamesRepo _repo;
 
     public GamesModel(){
-        _repo = new GamesRepo("games.json");
+        _repo = new GamesRepo();
     }
 
     public void OnGet(){

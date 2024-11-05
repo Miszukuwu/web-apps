@@ -64,14 +64,6 @@
     "Price": 8.49
   },
   {
-    "Id": 9,
-    "Title": "The Shawshank Redemption",
-    "Director": "Frank Darabont",
-    "ReleaseDate": "1994-09-23",
-    "Genre": "Drama",
-    "Price": 9.99
-  },
-  {
     "Id": 10,
     "Title": "The Lord of the Rings: The Fellowship of the Ring",
     "Director": "Peter Jackson",

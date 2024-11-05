@@ -35,9 +35,14 @@ Layout = null;
             <td>@game.ReleaseDate</td>
             <td>@game.Genre</td>
             <td>@game.Price $</td>
+            <td>
+                <a class="btn btn-danger" asp-page="DeleteGame" asp-route-id="@game.Id">Usuń</a>
+                <a class="btn btn-secondary" asp-page="EditGame" asp-route-id="@game.Id">Edytuj</a>
+            </td>
         </tr>
     }
 </table>
 <a asp-page="Movies">Filmy</a>
+<a asp-page="AddGame">Dodaj nową grę</a>
 </body>
 </html>

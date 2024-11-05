@@ -1,0 +1,58 @@
+﻿@page
+@model cw6.Pages.AddGameModel
+<!doctype html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Dodawanie Gry</title>
+</head>
+<body>
+<h1>Dodaj nową grę</h1>
+<form asp-page="AddGame" method="post">
+    <div class="row m-3">
+        <label class="col-1" asp-for="@Model.MyGame.Title"></label>
+        <input class="col-6" type="text" asp-for="@Model.MyGame.Title">
+        <span asp-validation-for="@Model.MyGame.Title" class="text-danger"></span>
+    </div>
+    <div class="row m-3">
+        <label class="col-1" asp-for="@Model.MyGame.Publisher"></label>
+        <input class="col-6" type="text" asp-for="@Model.MyGame.Publisher">
+        <span asp-validation-for="@Model.MyGame.Publisher" class="text-danger"></span>
+    </div>
+    <div class="row m-3">
+        <label class="col-1" asp-for="@Model.MyGame.ReleaseDate"></label>
+        <input class="col-6" type="date" asp-for="@Model.MyGame.ReleaseDate">
+        <span asp-validation-for="@Model.MyGame.ReleaseDate" class="text-danger"></span>
+    </div>
+<div class="row m-3">
+            <label class="col-1 text-end" asp-for="@Model.MyGame.Genre"></label>
+            <select class="col-6" asp-for="@Model.MyGame.Genre" >
+                @if (ViewData["Genres"] != null){
+                    @foreach(var genre in ViewData["Genres"] as List<string>)
+                    {
+                        <option value="@genre">@genre</option>
+                    }
+                }
+            </select>
+        </div>
+    <div class="row m-3">
+        <label class="col-1" asp-for="@Model.MyGame.Price"></label>
+        <input class="col-6" type="number" asp-for="@Model.MyGame.Price">
+        <span asp-validation-for="@Model.MyGame.Price" class="text-danger"></span>
+    </div>
+    <div class="row m-3">
+        <input type="submit" value="Dodaj" class="offset-1 col-6 btn btn-primary">
+    </div>
+</form>
+<div>
+    <a asp-page="Games">Powrót do strony głównej</a>
+</div>
+<div>
+    @ViewData["Message"]
+</div>
+</body>
+</html>
