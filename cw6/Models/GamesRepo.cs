@@ -4,25 +4,62 @@ namespace cw6.Models;
 
 public class GamesRepo {
     private string _filePath;
+    private string _fileType;
     private List<Game>? _games;
     
-    public GamesRepo(string? filePath = "games.json") {
-        _filePath = filePath;
-        string content = File.ReadAllText(_filePath);
-        _games = JsonSerializer.Deserialize<List<Game>>(content);
-    }
-
     public List<Game>? Games {
         get {
             return _games;
         }
     }
+    
+    public GamesRepo(string? filePath = "games.json") {
+        _filePath = filePath;
+        _fileType = Path.GetExtension(_filePath);
+        
+        switch (_fileType) {
+            case ".json":
+                string content = File.ReadAllText(_filePath);
+                _games = JsonSerializer.Deserialize<List<Game>>(content);
+                break;
+            case ".txt":
+                string[] lines = File.ReadAllLines(_filePath);
+                _games = new List<Game>();
+                for (int i = 0; i < lines.Length; i++) {
+                    if (string.IsNullOrWhiteSpace(lines[i])) {
+                        continue;
+                    }
+                    Game game = new Game {
+                        Id = int.Parse(lines[i]),
+                        Title = lines[++i],
+                        Publisher = lines[++i],
+                        Genre = lines[++i],
+                        Price = double.Parse(lines[++i]),
+                        ReleaseDate = DateOnly.Parse(lines[++i])
+                    };
+                    _games.Add(game);
+                }
+                break;
+        }
+    }
+
     private void SaveChanges(){
-        var options = new JsonSerializerOptions {
-            WriteIndented = true
-        };
-        string content = JsonSerializer.Serialize(_games, options);
-        File.WriteAllText(_filePath, content);
+        string content = "";
+        switch (_fileType) {
+            case ".json":
+                var options = new JsonSerializerOptions {
+                    WriteIndented = true
+                };
+                content = JsonSerializer.Serialize(_games, options);
+                File.WriteAllText(_filePath, content);
+                break;
+            case ".txt":
+                foreach (var game in _games) {
+                    content += $"{game.Id}\n{game.Title}\n{game.Publisher}\n{game.Genre}\n{game.Price}\n{game.ReleaseDate}\n\n";
+                }
+                File.WriteAllText(_filePath, content);
+                break;
+        }
     }
     
     private int GetNextId(){

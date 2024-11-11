@@ -86,45 +86,5 @@
     "Genre": "Shooter",
     "Publisher": "New Blood",
     "ReleaseDate": "2077-10-23"
-  },
-  {
-    "Id": 12,
-    "Title": null,
-    "Price": null,
-    "Genre": "RPG",
-    "Publisher": null,
-    "ReleaseDate": null
-  },
-  {
-    "Id": 13,
-    "Title": null,
-    "Price": null,
-    "Genre": "RPG",
-    "Publisher": null,
-    "ReleaseDate": null
-  },
-  {
-    "Id": 14,
-    "Title": null,
-    "Price": null,
-    "Genre": "RPG",
-    "Publisher": null,
-    "ReleaseDate": null
-  },
-  {
-    "Id": 15,
-    "Title": null,
-    "Price": null,
-    "Genre": "RPG",
-    "Publisher": null,
-    "ReleaseDate": null
-  },
-  {
-    "Id": 16,
-    "Title": null,
-    "Price": null,
-    "Genre": "RPG",
-    "Publisher": null,
-    "ReleaseDate": null
   }
 ]
