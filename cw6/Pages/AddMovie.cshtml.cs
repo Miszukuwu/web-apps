@@ -19,7 +19,7 @@ public class AddMovieModel : PageModel {
             return Page();
         }
         if(ModelState.IsValid){
-            MoviesRepo repo = new MoviesRepo("movies.json");
+            MoviesRepo repo = new MoviesRepo();
             repo.AddMovie(MyMovie);
             ViewData["Message"] = "Movie added";
             return RedirectToPage("Movies");

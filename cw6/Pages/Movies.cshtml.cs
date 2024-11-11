@@ -9,7 +9,7 @@ public class MoviesModel : PageModel {
 
     
     public MoviesModel(){
-        _repo = new MoviesRepo("movies.json");
+        _repo = new MoviesRepo();
     }
 
     public void OnGet(){

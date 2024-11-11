@@ -1,0 +1,56 @@
+1
+Inception
+Christopher Nolan
+Sci-Fi
+7,99
+16.07.2010
+
+2
+The Matrix
+Lana Wachowski, Lilly Wachowski
+Sci-Fi
+8,99
+31.03.1999
+
+3
+Interstellar
+Christopher Nolan
+Sci-Fi
+10,99
+07.11.2014
+
+4
+The Godfather
+Francis Ford Coppola
+Crime
+7,99
+24.03.1972
+
+5
+Pulp Fiction
+Quentin Tarantino
+Crime
+6,99
+14.10.1994
+
+7
+Fight Club
+David Fincher
+Drama
+7,49
+15.10.1999
+
+8
+Forrest Gump
+Robert Zemeckis
+Drama
+8,49
+06.07.1994
+
+10
+The Lord of the Rings: The Fellowship of the Ring
+Peter Jackson
+Fantasy
+10,49
+19.12.2001
+
