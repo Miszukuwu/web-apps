@@ -1,0 +1,77 @@
+1
+The Witcher 3: Wild Hunt
+CD Projekt
+RPG
+40
+19.05.2015
+
+2
+Cyberpunk 2077
+CD Projekt
+RPG
+59
+10.12.2020
+
+3
+Red Dead Redemption 2
+Rockstar Games
+Action
+39
+26.10.2018
+
+4
+The Legend of Zelda: Breath of the Wild
+Nintendo
+Adventure
+59
+03.03.2017
+
+5
+God of War
+Sony Interactive Entertainment
+Action
+49
+20.04.2018
+
+6
+Hades
+Supergiant Games
+Roguelike
+24
+17.09.2020
+
+7
+Minecraft
+Mojang
+Sandbox
+26
+18.11.2011
+
+8
+Among Us
+Innersloth
+Party
+5
+15.06.2018
+
+9
+Stardew Valley
+ConcernedApe
+Simulation
+15
+26.02.2016
+
+10
+DOOM Eternal
+Bethesda Softworks
+Shooter
+59
+20.03.2020
+
+11
+Ultrakill
+New Blood
+Shooter
+30
+23.10.2077
+
