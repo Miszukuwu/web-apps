@@ -3,15 +3,16 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace cw6.Pages;
 
-public class GamesModel : PageModel {
+public class GamesModel : PageModel
+{
     public List<Game> Games { get; set; }
     GamesRepo _repo;
 
-    public GamesModel(){
+    public GamesModel() {
         _repo = new GamesRepo();
     }
 
-    public void OnGet(){
-        Games = _repo.Games?? new List<Game>();
+    public void OnGet() {
+        Games = _repo.Games ?? new List<Game>();
     }
 }

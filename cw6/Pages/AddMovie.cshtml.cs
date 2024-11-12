@@ -4,21 +4,22 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace cw6.Pages;
 
-public class AddMovieModel : PageModel {
+public class AddMovieModel : PageModel
+{
     [BindProperty]
     public Movie? MyMovie { get; set; }
-    public List<string>? Genres {get; set;}
-    public void OnGet(){
+    public List<string>? Genres { get; set; }
+    public void OnGet() {
         ViewData["Genres"] = Genres;
         ViewData["Message"] = "Dopiero wywitlamy formularz";
     }
-    public IActionResult OnPost(){
+    public IActionResult OnPost() {
         ViewData["Genres"] = Genres;
-        if (MyMovie == null){
+        if (MyMovie == null) {
             ViewData["Message"] = "Brak danych";
             return Page();
         }
-        if(ModelState.IsValid){
+        if (ModelState.IsValid) {
             MoviesRepo repo = new MoviesRepo();
             repo.AddMovie(MyMovie);
             ViewData["Message"] = "Movie added";
@@ -26,9 +27,9 @@ public class AddMovieModel : PageModel {
         } else {
             ViewData["Message"] = "Invalid movie";
         }
-        return Page();      
+        return Page();
     }
-    public AddMovieModel(){
-        Genres = new List<string>{"Acton", "Crime", "Sci-Fi", "Drama", "Action", "Fantasy"};
+    public AddMovieModel() {
+        Genres = new List<string> {"Acton", "Crime", "Sci-Fi", "Drama", "Action", "Fantasy"};
     }
 }

@@ -7,16 +7,14 @@ namespace cw6.Pages
     public class DeleteMovieModel : PageModel
     {
         private MoviesRepo _repo = new MoviesRepo();
-        public IActionResult OnGet(int? id)
-        {
-            if (id != null)
-            {
+        public IActionResult OnGet(int? id) {
+            if (id != null) {
                 Movie? movie = _repo.GetById(id);
-                if(movie != null)
-                     _repo.DeleteMovie(movie);
+                if (movie != null)
+                    _repo.DeleteMovie(movie);
             }
             return RedirectToPage("Movies");
-           
+
         }
     }
 }

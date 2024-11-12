@@ -2,21 +2,22 @@
 
 namespace cw6.Models;
 
-public class GamesRepo {
+public class GamesRepo
+{
     private string _filePath;
     private string _fileType;
     private List<Game>? _games;
-    
+
     public List<Game>? Games {
         get {
             return _games;
         }
     }
-    
+
     public GamesRepo(string? filePath = "games.json") {
         _filePath = filePath;
         _fileType = Path.GetExtension(_filePath);
-        
+
         switch (_fileType) {
             case ".json":
                 string content = File.ReadAllText(_filePath);
@@ -43,30 +44,30 @@ public class GamesRepo {
         }
     }
 
-    private void SaveChanges(){
+    private void SaveChanges() {
         string content = "";
         switch (_fileType) {
             case ".json":
-                var options = new JsonSerializerOptions {
+                JsonSerializerOptions options = new JsonSerializerOptions {
                     WriteIndented = true
                 };
                 content = JsonSerializer.Serialize(_games, options);
                 File.WriteAllText(_filePath, content);
                 break;
             case ".txt":
-                foreach (var game in _games) {
+                foreach (Game game in _games) {
                     content += $"{game.Id}\n{game.Title}\n{game.Publisher}\n{game.Genre}\n{game.Price}\n{game.ReleaseDate}\n\n";
                 }
                 File.WriteAllText(_filePath, content);
                 break;
         }
     }
-    
-    private int GetNextId(){
-        return _games != null ?_games.Max(m => m.Id) +1 : 1;
+
+    private int GetNextId() {
+        return _games != null ? _games.Max(m => m.Id) + 1 : 1;
     }
-    public void AddGame(Game game){
-        if (_games == null){
+    public void AddGame(Game game) {
+        if (_games == null) {
             _games = new List<Game>();
         }
         game.Id = GetNextId();
@@ -88,7 +89,7 @@ public class GamesRepo {
     }
 
     internal void UpdateGame(Game movie) {
-        var toUpdate = _games?.FirstOrDefault(m => m.Id == movie.Id);
+        Game? toUpdate = _games?.FirstOrDefault(m => m.Id == movie.Id);
         if (toUpdate != null) {
             toUpdate.Title = movie.Title;
             toUpdate.Publisher = movie.Publisher;

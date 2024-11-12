@@ -11,33 +11,31 @@ namespace cw6.Pages
         public List<string>? Genres { get; set; }
         private readonly MoviesRepo _repo = new MoviesRepo();
 
-        public EditMovieModel()
-        {
+        public EditMovieModel() {
             Genres = new List<string> {
-                 "Action", "Crime", "Drama",
-                 "Fantasy","Sci-Fi","Comedy",
-                 "Horror" };
+                "Action", "Crime", "Drama",
+                "Fantasy", "Sci-Fi", "Comedy",
+                "Horror"
+            };
         }
 
-        public void OnGet(int id)
-        {
-
+        public void OnGet(int id) {
             ViewData["Genres"] = Genres;
             var movieToEdit = _repo.GetById(id);
-            if (movieToEdit != null)
-            {
+            if (movieToEdit != null) {
                 MyMovie = movieToEdit;
             }
         }
-        public IActionResult OnPost(){
-            if(ModelState.IsValid){
+        public IActionResult OnPost() {
+            ViewData["Genres"] = Genres;
+            if (ModelState.IsValid) {
                 var movie = MyMovie;
                 //TODO zapisywanie do pliku
                 _repo.UpdateMovie(movie);
                 return RedirectToPage("Movies");
             }
             return Page();
-            
+
         }
     }
 }

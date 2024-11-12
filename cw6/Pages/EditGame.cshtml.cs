@@ -11,36 +11,30 @@ namespace cw6.Pages
         public List<string>? Genres { get; set; }
         private readonly GamesRepo _repo = new GamesRepo();
 
-        public EditGameModel()
-        {
-            Genres = new List<string>
-            {
-                "RPG", "Action", "Adventure", "Rougelike", 
-                "Sandbox", "Simulation", "Shooter","Party"
+        public EditGameModel() {
+            Genres = new List<string> {
+                "RPG", "Action", "Adventure", "Rougelike",
+                "Sandbox", "Simulation", "Shooter", "Party"
             };
         }
 
-        public void OnGet(int id)
-        {
-
+        public void OnGet(int id) {
             ViewData["Genres"] = Genres;
             var gameToEdit = _repo.GetById(id);
-            if (gameToEdit != null)
-            {
+            if (gameToEdit != null) {
                 MyGame = gameToEdit;
             }
         }
-        public IActionResult OnPost(){
-            if(ModelState.IsValid){
+        public IActionResult OnPost() {
+            ViewData["Genres"] = Genres;
+            if (ModelState.IsValid) {
                 var game = MyGame;
-                //TODO zapisywanie do pliku
                 _repo.UpdateGame(game);
                 return RedirectToPage("Games");
             }
 
             ViewData["Message"] = ModelState;
             return Page();
-            
         }
     }
 }
