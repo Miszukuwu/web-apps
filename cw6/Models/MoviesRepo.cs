@@ -30,11 +30,11 @@ public class MoviesRepo {
                         continue;
                     }
                     Movie movie = new Movie {
-                        Id = int.Parse(lines[i]),
+                        Id = Convert.ToInt32(lines[i]),
                         Title = lines[++i],
                         Director = lines[++i],
                         Genre = lines[++i],
-                        Price = double.Parse(lines[++i]),
+                        Price = Convert.ToDouble(lines[++i]),
                         ReleaseDate = DateOnly.Parse(lines[++i])
                     };
                     _movies.Add(movie);

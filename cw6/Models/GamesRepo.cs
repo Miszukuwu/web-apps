@@ -14,7 +14,7 @@ public class GamesRepo
         }
     }
 
-    public GamesRepo(string? filePath = "games.json") {
+    public GamesRepo(string filePath = "games.txt") {
         _filePath = filePath;
         _fileType = Path.GetExtension(_filePath);
 
@@ -31,11 +31,11 @@ public class GamesRepo
                         continue;
                     }
                     Game game = new Game {
-                        Id = int.Parse(lines[i]),
+                        Id = Convert.ToInt32(lines[i]),
                         Title = lines[++i],
                         Publisher = lines[++i],
                         Genre = lines[++i],
-                        Price = double.Parse(lines[++i]),
+                        Price = Convert.ToDouble(lines[++i]),
                         ReleaseDate = DateOnly.Parse(lines[++i])
                     };
                     _games.Add(game);
