@@ -14,11 +14,11 @@ public class PrimeNumbers {
         return true;
     }
     
-    public static List<int> GeneratePrime(int amount) {
+    public static List<int> GeneratePrime(int startIndex, int amount) {
         List<int> PrimeNumbers = new List<int>();
         int number = 0;
         
-        for (int i = 0; i < amount; i++) {
+        for (int i = startIndex; i < amount; i++) {
             while (!isPrime(number)) {
                 number++;
             }

@@ -8,6 +8,6 @@ public class PrimeNumbersGenerator : PageModel
 {
     public List<int>? PrimeNumbersList { get; set; }
     public void OnPost(int amount) {
-        PrimeNumbersList = PrimeNumbers.GeneratePrime(amount);
+        PrimeNumbersList = PrimeNumbers.GeneratePrime(0, amount);
     }
 }
