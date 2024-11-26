@@ -14,7 +14,7 @@ public class PrimeNumbers {
         return true;
     }
     
-    public static List<int> GeneratePrime(int startIndex, int amount) {
+    public static List<int> GeneratePrimeList(int startIndex, int amount) {
         List<int> PrimeNumbers = new List<int>();
         int number = 0;
         
