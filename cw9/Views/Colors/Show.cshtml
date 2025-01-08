@@ -1,0 +1,22 @@
+﻿@model List<cw9.Models.MyColor>
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <title>Kolory</title>
+    <script>
+        function setBackgroundColor(color){
+            document.body.style.background = color;
+        }
+    </script>
+</head>
+<body>
+<div>
+    <h1>Wybór koloru</h1>
+    <select name="color" id="color" onchange="setBackgroundColor(this.value)">
+        @foreach (MyColor color in Model) {
+            <option value="@color.Key">@color.Value</option>
+        }
+    </select>
+</div>
+</body>
+</html>
