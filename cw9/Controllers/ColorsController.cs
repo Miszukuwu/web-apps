@@ -7,6 +7,6 @@ public class ColorsController : Controller
 {
     // GET
     public IActionResult Show() {
-        return View(ColorsRepo.GetColors());
+        return View("Colors",ColorsRepo.GetColors());
     }
 }
