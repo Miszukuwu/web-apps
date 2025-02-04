@@ -1,0 +1,20 @@
+﻿@model MyStudent;
+<h1>Dodawanie studentów</h1>
+<form asp-action="Create" method="post">
+    <div class="row m-2">
+        <label class="col-3 text-end" asp-for="FirstName"></label>
+        <input class="col-6" type="text" asp-for="FirstName" name="FirstName" id="FirstName">
+        <span asp-validation-for="FirstName" class="col-3 text-danger"></span>
+    </div>
+    <div class="row m-2">
+        <label class="col-3 text-end" asp-for="LastName"></label>
+        <input class="col-6" type="text" asp-for="LastName" name="LastName" id="LastName">
+        <span asp-validation-for="LastName" class="col-3 text-danger"></span>
+    </div>
+    <div class="row m-2">
+        <label class="col-3 text-end" asp-for="Age"></label>
+        <input class="col-6" type="number" asp-for="Age" name="Age" id="Age">
+        <span asp-validation-for="Age" class="col-3 text-danger"></span>
+    </div>
+    <button class="btn btn-primary col-6 offset-3" type="submit">Dodaj</button>
+</form>

@@ -15,19 +15,15 @@ public class FakeStudentRepo : IStudentRepo{
         return _students;
     }
     public MyStudent? GetStudentById(int id) {
-        return _students.FirstOrDefault(s => s.Id == id);
+        throw new NotImplementedException();
     }
     public void AddStudent(MyStudent student) {
-        _students.Add(student);
+        throw new NotImplementedException();
     }
     public void UpdateStudent(MyStudent student) {
         throw new NotImplementedException();
     }
     public void DeleteStudent(int id) {
-        MyStudent? student = _students.FirstOrDefault(s => s.Id == id);
-        if (student == null) {
-            return;
-        }
-        _students.Remove(student);
+        throw new NotImplementedException();
     }
 }
