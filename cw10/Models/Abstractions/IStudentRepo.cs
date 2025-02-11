@@ -5,5 +5,5 @@ public interface IStudentRepo {
     MyStudent? GetStudentById(int id);
     void AddStudent(MyStudent student);
     void UpdateStudent(MyStudent student);
-    void DeleteStudent(int id);
+    void DeleteStudent(int? id);
 }

@@ -23,6 +23,7 @@ public class MySqlStudentRepo : IStudentRepo {
                 Age = reader.GetInt32("age")
             });
         }
+        reader.Close();
         connection.Close();
         return students;
     }
@@ -32,14 +33,20 @@ public class MySqlStudentRepo : IStudentRepo {
     public void AddStudent(MyStudent student) {
         MySqlConnection connection = new MySqlConnection(_connectionString);
         MySqlCommand command = connection.CreateCommand();
-        command.CommandText = $"INSERT INTO students(id, firstname, lastname, age) VALUES({student.Id}, '{student.FirstName}', '{student.LastName}',{student.Age})";
+        command.CommandText = $"INSERT INTO students(firstname, lastname, age) VALUES('{student.FirstName}', '{student.LastName}',{student.Age})";
         connection.Open();
         command.ExecuteNonQuery();
+        connection.Close();
     }
     public void UpdateStudent(MyStudent student) {
         throw new NotImplementedException();
     }
-    public void DeleteStudent(int id) {
-        throw new NotImplementedException();
+    public void DeleteStudent(int? id) {
+        MySqlConnection connection = new MySqlConnection(_connectionString);
+        MySqlCommand command = connection.CreateCommand();
+        command.CommandText = $"DELETE FROM students where id={id}";
+        connection.Open();
+        command.ExecuteNonQuery();
+        connection.Close();
     }
 }

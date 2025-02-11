@@ -23,7 +23,7 @@ public class FakeStudentRepo : IStudentRepo{
     public void UpdateStudent(MyStudent student) {
         throw new NotImplementedException();
     }
-    public void DeleteStudent(int id) {
+    public void DeleteStudent(int? id) {
         throw new NotImplementedException();
     }
 }

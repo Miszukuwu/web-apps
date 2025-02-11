@@ -22,7 +22,7 @@ public class StudentsController : Controller
     public IActionResult Create() {
         return View();
     }
-
+    
     [HttpPost]
     public IActionResult Create(MyStudent student) {
         if (ModelState.IsValid) {
@@ -30,5 +30,11 @@ public class StudentsController : Controller
             return RedirectToAction("List");
         }
         return View();
+    }
+    public IActionResult Delete(int? id) {
+        if (id != null) {
+            _studentRepo.DeleteStudent(id);
+        }
+        return RedirectToAction("List");
     }
 }
