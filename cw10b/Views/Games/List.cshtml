@@ -1,0 +1,33 @@
+﻿@model List<Game>
+
+@{
+    ViewBag.Title = "Lista Gier";
+    Layout = "_Layout";
+}
+<h2>Lista gier</h2>
+<table>
+    <thead>
+    <tr>
+        <th>Lp.</th>
+        <th>Tytuł</th>
+        <th>Wydawca</th>
+        <th>Rok wydania</th>
+        <th>Cena</th>
+    </tr>
+    </thead>
+    @{
+        int i = 1;
+        foreach (Game game in Model) {
+            <tr>
+                <td>@i</td>
+                <td>@game.Title</td>
+                <td>@game.Publisher</td>
+                <td>@game.ReleaseYear</td>
+                <td>@game.Price</td>
+                <td><a asp-action="Update" asp-route-game="@game" class="btn btn-primary">Edytuj</a></td>
+                <td><a asp-action="Delete" asp-route-id="@game.Id" class="btn btn-danger">Usuń</a></td>
+            </tr>
+            i++;
+        }
+    }
+</table>

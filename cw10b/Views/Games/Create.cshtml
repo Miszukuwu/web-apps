@@ -1,0 +1,35 @@
+﻿@model Game
+
+@{
+    ViewBag.Title = "Dodawanie gry";
+    Layout = "_Layout";
+}
+
+<h2>Dodawanie gry</h2>
+<form asp-action="Create" method="post">
+    <table>
+        <tr>
+            <td><label asp-for="Title"></label></td>
+            <td><input type="text" name="Title" id="Title" asp-for="Title"></td>
+            <td><span asp-validation-for="Title"></span></td>
+        </tr>
+        <tr>
+            <td><label asp-for="Publisher"></label></td>
+            <td><input type="text" name="Publisher" id="Publisher" asp-for="Publisher"></td>
+            <td><span asp-validation-for="Publisher"></span></td>
+        </tr>
+        <tr>
+            <td><label asp-for="ReleaseYear"></label></td>
+            <td><input type="number" name="ReleaseYear" id="ReleaseYear" asp-for="ReleaseYear" step="1"></td>
+            <td><span asp-validation-for="ReleaseYear"></span></td>
+        </tr>
+        <tr>
+            <td><label asp-for="Price"></label></td>
+            <td><input type="number" name="Price" id="Price" asp-for="Price" step="0.01"></td>
+            <td><span asp-validation-for="Price"></span></td>
+        </tr>
+        <tr>
+            <td><button class="btn btn-primary">Dodaj</button></td>
+        </tr>
+    </table>
+</form>
