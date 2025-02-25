@@ -24,7 +24,7 @@
                 <td>@game.Publisher</td>
                 <td>@game.ReleaseYear</td>
                 <td>@game.Price</td>
-                <td><a asp-action="Update" asp-route-game="@game" class="btn btn-primary">Edytuj</a></td>
+                <td><a asp-action="Update" asp-route-id="@game.Id" class="btn btn-primary">Edytuj</a></td>
                 <td><a asp-action="Delete" asp-route-id="@game.Id" class="btn btn-danger">Usuń</a></td>
             </tr>
             i++;

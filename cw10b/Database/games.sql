@@ -34,7 +34,7 @@ CREATE TABLE `games` (
   `id` int(11) NOT NULL,
   `title` varchar(250) NOT NULL,
   `publisher` varchar(200) NOT NULL,
-  `release_date` date NOT NULL,
+  `release_year` int(11) NOT NULL,
   `price` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -42,22 +42,22 @@ CREATE TABLE `games` (
 -- Dumping data for table `games`
 --
 
-INSERT INTO `games` (`id`, `title`, `publisher`, `release_date`, `price`) VALUES
-(1, 'The Legend of Zelda: Breath of the Wild', 'Nintendo', '2017-03-03', 59.99),
-(2, 'Red Dead Redemption 2', 'Rockstar Games', '2018-10-26', 59.99),
-(3, 'The Witcher 3: Wild Hunt', 'CD Projekt', '2015-05-19', 39.99),
-(4, 'Super Mario Odyssey', 'Nintendo', '2017-10-27', 59.99),
-(5, 'Minecraft', 'Mojang', '2011-05-17', 26.95),
-(6, 'Cyberpunk 2077', 'CD Projekt', '2020-12-10', 59.99),
-(7, 'God of War', 'Sony Interactive Entertainment', '2018-04-20', 39.99),
-(8, 'Overwatch', 'Blizzard Entertainment', '2016-05-24', 39.99),
-(9, 'Fortnite', 'Epic Games', '2017-07-25', 0),
-(10, 'Grand Theft Auto V', 'Rockstar Games', '2013-09-17', 29.99),
-(11, 'Dark Souls III', 'FromSoftware', '2016-04-12', 59.99),
-(12, 'Hollow Knight', 'Team Cherry', '2017-02-24', 14.99),
-(13, 'Animal Crossing: New Horizons', 'Nintendo', '2020-03-20', 59.99),
-(14, 'DOOM Eternal', 'Bethesda Softworks', '2020-03-20', 59.99),
-(15, 'Stardew Valley', 'ConcernedApe', '2016-02-26', 14.99);
+INSERT INTO `games` (`id`, `title`, `publisher`, `release_year`, `price`) VALUES
+(1, 'The Legend of Zelda: Breath of the Wild', 'Nintendo', 2017, 59.99),
+(2, 'Red Dead Redemption 2', 'Rockstar Games', 2018, 59.99),
+(3, 'The Witcher 3: Wild Hunt', 'CD Projekt', 2015, 39.99),
+(4, 'Super Mario Odyssey', 'Nintendo', 2017, 59.99),
+(5, 'Minecraft', 'Mojang', 2011, 26.95),
+(6, 'Cyberpunk 2077', 'CD Projekt', 2020, 59.99),
+(7, 'God of War', 'Sony Interactive Entertainment', 2018, 39.99),
+(8, 'Overwatch', 'Blizzard Entertainment', 2016, 39.99),
+(9, 'Fortnite', 'Epic Games', 2017, 0),
+(10, 'Grand Theft Auto V', 'Rockstar Games', 2013, 29.99),
+(11, 'Dark Souls III', 'FromSoftware', 2016, 59.99),
+(12, 'Hollow Knight', 'Team Cherry', 2017, 14.99),
+(13, 'Animal Crossing: New Horizons', 'Nintendo', 2020, 59.99),
+(14, 'DOOM Eternal', 'Bethesda Softworks', 2020, 59.99),
+(15, 'Stardew Valley', 'ConcernedApe', 2016, 14.99);
 
 --
 -- Indeksy dla zrzutów tabel

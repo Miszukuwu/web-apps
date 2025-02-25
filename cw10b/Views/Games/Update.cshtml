@@ -1,12 +1,13 @@
 ﻿@model Game
 
 @{
-    ViewBag.Title = "Dodawanie gry";
+    ViewBag.Title = "Aktualizowanie Gry";
     Layout = "_Layout";
 }
 
-<h2>Dodawanie gry</h2>
-<form asp-action="Create" method="post" name="myForm">
+<h2>Aktualizowanie Gry</h2>
+<form asp-action="Update" method="post" name="myForm">
+    <input type="number" name="Id" id="Id" value="@Model.Id" hidden readonly>
     <table>
         <tr>
             <td><label asp-for="Title"></label></td>
@@ -29,7 +30,7 @@
             <td><span asp-validation-for="Price" id="PriceValid" class="text-danger"></span></td>
         </tr>
         <tr>
-            <td><button class="btn btn-primary" onclick="validate()" type="button">Dodaj</button></td>
+            <td><button class="btn btn-primary" onclick="validate()" type="button">Zaktualizuj</button></td>
         </tr>
     </table>
 </form>

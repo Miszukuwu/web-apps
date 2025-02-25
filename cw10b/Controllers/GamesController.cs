@@ -32,8 +32,21 @@ public class GamesController : Controller {
         }
         return RedirectToAction("List");
     }
-    public IActionResult Update(Game game) {
+    [HttpGet]
+    public IActionResult Update(int id) {
+        Game? game = _gamesRepo.getGameById(id);
+        if (game == null) {
+            return RedirectToAction("List");
+        }
         return View(game);
+    }
+    [HttpPost]
+    public IActionResult Update(Game game) {
+        if (!ModelState.IsValid) {
+            return View();
+        }
+        _gamesRepo.UpdateGame(game);
+        return RedirectToAction("List");
     }
     // TODO: Edytowanie i walidacja po stronie klienta (javascript)
 }
