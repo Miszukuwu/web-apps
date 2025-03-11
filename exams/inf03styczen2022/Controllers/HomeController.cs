@@ -20,7 +20,11 @@ public class HomeController : Controller {
             return RedirectToAction("Index");
         }
         reservation.TableNumber = 1;
-        _repo.addReservation(reservation);
+        _repo.AddReservation(reservation);
         return View();
+    }
+    public IActionResult List() {
+        List<Reservation> reservations = _repo.GetReservations();
+        return View(reservations);
     }
 }

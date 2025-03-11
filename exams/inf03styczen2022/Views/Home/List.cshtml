@@ -1,0 +1,51 @@
+﻿@model List<Reservation>
+
+<!doctype html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="~/styl1.css">
+</head>
+<body>
+<header>
+    <h1>Witamy w restauracji "Wszystkie Smaki"</h1>
+</header>
+<main>
+    <div id="up">
+        <section id="left">
+            <a asp-action="List"><img src="~/menu.jpg" alt="Nasze danie"></a>
+        </section>
+        <section id="right">
+            <table>
+                <tr>
+                    <th>Lp</th>
+                    <th>Nr Stolika</th>
+                    <th>Data rezerwacji</th>
+                    <th>Liczba osób</th>
+                    <th>Telefon</th>
+                </tr>
+                @{
+                    int lp = 0;
+                    foreach (Reservation reservation in Model) {
+                        <td>lp</td>
+                        <td>@reservation.TableNumber</td>
+                        <td>@reservation.ReservationDate</td>
+                        <td>@reservation.AmountOfPeople</td>
+                        <td>@reservation.PhoneNumber</td>
+                        lp++;
+                    }
+                }
+            </table>
+        </section>
+    </div>
+</main>
+<footer>
+    Stronę internetową opracował: <i>1234567890</i>
+    <a asp-action="Index">Strona główna</a>
+</footer>
+</body>
+</html>
