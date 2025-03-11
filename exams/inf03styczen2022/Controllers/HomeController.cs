@@ -6,9 +6,9 @@ using inf03styczen2022.Models;
 using MySql.Data.MySqlClient;
 
 public class HomeController : Controller {
-    private readonly string _connectionString;
+    private RepoReservations _repo;
     public HomeController(IConfiguration configuration) {
-        _connectionString = configuration.GetConnectionString("mysql");
+        _repo = new RepoReservations(configuration);
     }
     // GET
     public IActionResult Index() {
@@ -16,7 +16,11 @@ public class HomeController : Controller {
     }
     [HttpPost]
     public IActionResult Rezerwacja(Reservation reservation) {
-        MySqlConnection connection = new MySqlConnection();
+        if (reservation == null) {
+            return RedirectToAction("Index");
+        }
+        reservation.TableNumber = 1;
+        _repo.addReservation(reservation);
         return View();
     }
 }

@@ -1,4 +1,4 @@
-﻿@model inf03styczen2022.Models.Reservation
+﻿@model Reservation
 
 <!doctype html>
 <html lang="pl">
@@ -32,11 +32,11 @@
         <h2>Zarezerwuj stolik on-line</h2>
         <form method="post" asp-action="Rezerwacja">
             <label for="data">Data (format rrrr-mm-dd):</label> <br>
-            <input type="text" asp-for="ReservationDate" name="data" id="data"><br>
+            <input type="text" name="ReservationDate" id="data"><br>
             <label for="ilosc">Ile osób?</label><br>
-            <input type="number" name="ilosc" id="ilosc" asp-for="AmountOfPeople"><br>
+            <input type="number" name="AmountOfPeople" id="ilosc"><br>
             <label for="telefon">Twój numer telefonu</label><br>
-            <input type="text" name="telefon" id="telefon" asp-for="PhoneNumber"><br>
+            <input type="text" name="PhoneNumber" id="telefon"><br>
             <input type="checkbox" name="zgoda" id="zgoda">
             <label for="zgoda">Zgadzam się na przetwarzanie moich danych osobowych</label><br>
             <button type="reset">WYCZYŚĆ</button>
