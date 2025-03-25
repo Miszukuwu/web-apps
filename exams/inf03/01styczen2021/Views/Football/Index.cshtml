@@ -1,0 +1,32 @@
+﻿@using inf03styczen202101.Models
+@{
+    ViewBag.Title = "Rozgrywki futbolowe";
+    Layout = "_Layout";
+    List<Match> matches = ViewBag.Matches;
+    List<Match> players = ViewBag.Players;
+}
+<section id="matches">
+    @foreach (Match match in matches) {
+        <div id="match">
+            <h3>@match.Team1 - @match.Team2</h3>
+            <h4>@match.Result</h4>
+            <p>w dniu: @match.Date</p>
+        </div>
+    }
+</section>
+<main>
+    <div id="middle">
+        <h2>Reprezantacja Polski</h2>
+    </div>
+    <div id="left">
+        <p>Podaj pozycję zawodników (1-bramkarze, 2-obrońcy, 3-pomocnicy, 4-napastnicy):</p>
+        <form asp-action="Index">
+            <input type="number" name="id">
+            <button type="submit">Sprawdź</button>
+        </form>
+        <ul></ul>
+    </div>
+    <div id="right">
+        <img src="~/obraz1.jpg" alt="piłkarz">
+    </div>
+</main>
