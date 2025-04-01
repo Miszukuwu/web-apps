@@ -7,7 +7,7 @@ using Models;
 public class FootballController : Controller {
     private FootballRepo _footballRepo;
     public FootballController(IConfiguration configuration) {
-        _footballRepo = new FootballRepo(configuration.GetConnectionString("FootballDB"));
+        _footballRepo = new FootballRepo(configuration.GetConnectionString("footballDB"));
     }
 
     [HttpGet]
@@ -20,9 +20,15 @@ public class FootballController : Controller {
     [HttpPost]
     public IActionResult Index(int id) {
         List<Match> matches = _footballRepo.GetMatches();
-        List<Player> players = _footballRepo.GetPositionPlayers(id);
+        List<Player> players = _footballRepo.GetPlayers(id);
         ViewBag.Matches = matches;
         ViewBag.Players = players;
         return View();
+    }
+    public IActionResult List() {
+        List<Match> matches = _footballRepo.GetMatches();
+        List<Player> players = _footballRepo.GetPlayers();
+        ViewBag.Matches = matches;
+        return View(players);
     }
 }

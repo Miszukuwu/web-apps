@@ -1,10 +1,9 @@
 ﻿@using inf03styczen202101.Models
-@model Int32
+@model List<Player>
 @{
     ViewBag.Title = "Rozgrywki futbolowe";
     Layout = "_Layout";
     List<Match> matches = ViewBag.Matches;
-    List<Player> players = ViewBag.Players;
 }
 <section id="matches">
     @foreach (Match match in matches) {
@@ -19,15 +18,10 @@
     <h2>Reprezantacja Polski</h2>
     <div id="middle">
         <div id="left">
-            <a asp-action="List">Sprawdź wszystkich graczy!</a>
-            <p>Podaj pozycję zawodników (1-bramkarze, 2-obrońcy, 3-pomocnicy, 4-napastnicy):</p>
-            <form asp-action="Index">
-                <input type="number" name="id">
-                <button type="submit">Sprawdź</button>
-            </form>
+            <a asp-action="Index">Wyszukaj na podstawie pozycji</a>
             <ul>
-                @foreach (Player player in players) {
-                    <li>@player.FirstName @player.LastName</li>
+                @foreach (Player player in Model) {
+                    <li>@player.FirstName @player.LastName - @player.Position</li>
                 }
             </ul>
         </div>

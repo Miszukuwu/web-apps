@@ -1,0 +1,48 @@
+﻿body{
+    font-family: Tahoma;
+    background-color: crimson;
+}
+h2{
+    text-align: center;
+    letter-spacing: 7px;
+    text-transform: capitalize;
+}
+header {
+    color: white;
+    text-align: center;
+    height: 370px;
+}
+.card{
+    color: white;
+    text-align: center;
+    width: 200px;
+    margin: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+.card:hover{
+    border-color: white;
+}
+main{
+    background-color: whitesmoke;
+    height: 100%;
+    min-height: 40vh;
+}
+#middle{
+    width: 100%;
+    display: flex;
+}
+#left{
+    width: 70%;
+    /*height: 50px;*/
+}
+#right{
+    width: 30%;
+    /*height: 230px;*/
+    text-align: right;
+}
+#matches{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}

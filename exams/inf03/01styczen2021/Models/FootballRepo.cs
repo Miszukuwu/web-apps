@@ -26,10 +26,10 @@ public class FootballRepo {
         connection.Close();
         return matches;
     }
-    public List<Player> GetPositionPlayers(int id) {
+    public List<Player> GetPlayers() {
         MySqlConnection connection = new MySqlConnection(_connectionString);
         MySqlCommand command = connection.CreateCommand();
-        command.CommandText = $"SELECT * FROM `zawodnik` WHERE `pozycja_id`={id};";
+        command.CommandText = $"SELECT `zawodnik`.`imie`, `zawodnik`.`nazwisko`, `pozycja`.`nazwa` FROM `zawodnik`, `pozycja` WHERE `zawodnik`.`pozycja_id`=`pozycja`.`id`";
         connection.Open();
         MySqlDataReader dataReader = command.ExecuteReader();
         List<Player> players = new List<Player>();
@@ -37,7 +37,25 @@ public class FootballRepo {
             players.Add(new Player() {
                 FirstName = dataReader.GetString("imie"),
                 LastName = dataReader.GetString("nazwisko"),
-                PositionId = dataReader.GetInt32("pozycja_id")
+                Position = dataReader.GetString("nazwa")
+            });
+        }
+        dataReader.Close();
+        connection.Close();
+        return players;
+    }
+    public List<Player> GetPlayers(int positionId) {
+        MySqlConnection connection = new MySqlConnection(_connectionString);
+        MySqlCommand command = connection.CreateCommand();
+        command.CommandText = $"SELECT `zawodnik`.`imie`, `zawodnik`.`nazwisko`, `pozycja`.`nazwa` FROM `zawodnik` INNER JOIN `pozycja` ON `zawodnik`.`pozycja_id`=`pozycja`.`id` AND `zawodnik`.`pozycja_id`={positionId}";
+        connection.Open();
+        MySqlDataReader dataReader = command.ExecuteReader();
+        List<Player> players = new List<Player>();
+        while (dataReader.Read()) {
+            players.Add(new Player() {
+                FirstName = dataReader.GetString("imie"),
+                LastName = dataReader.GetString("nazwisko"),
+                Position = dataReader.GetString("nazwa")
             });
         }
         dataReader.Close();
