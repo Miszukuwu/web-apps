@@ -1,0 +1,28 @@
+﻿@model IFormFile
+@{
+    ViewBag.Title = "Galeria";
+    Layout = "_Layout";
+    List<byte[]> images = ViewBag.Images;
+}
+
+<main>
+    <h2>@ViewBag.Title</h2>
+    <div id="middle">
+        <form action="">
+            <div>
+                <label for="image">Obraz: </label>
+                <input type="file" id="image" name="image" accept="image/*"><br>
+            </div>
+            <button type="submit">Wyślij</button>
+        </form>
+        <div id="right">
+            <section id="gallery">
+                @foreach (var image in images) {
+                    string base64tostring = Convert.ToBase64String(image);
+                    var Imagesrc = string.Format("data:Image/*;base64," + base64tostring);
+                    <img src="@Imagesrc"/>
+                }
+            </section>
+        </div>
+    </div>
+</main>

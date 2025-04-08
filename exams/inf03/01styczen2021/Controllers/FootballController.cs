@@ -31,4 +31,15 @@ public class FootballController : Controller {
         ViewBag.Matches = matches;
         return View(players);
     }
+    [HttpGet]
+    public IActionResult Gallery() {
+        ViewBag.Images = _footballRepo.GetImages();
+        return View();
+    }
+    [HttpPost]
+    public IActionResult Gallery(IFormFile image) {
+        _footballRepo.AddImage(image);
+        ViewBag.Images = _footballRepo.GetImages();
+        return View();
+    }
 }

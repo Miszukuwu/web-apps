@@ -11,6 +11,17 @@
 <body>
 <header>
     <h2>Światowe rozgrywki piłkarskie</h2>
+    <nav>
+        <li>
+            <a asp-action="Index">Strona Główna</a>
+        </li>
+        <li>
+            <a asp-action="List">Lista zawodników</a>
+        </li>
+        <li>
+            <a asp-action="Gallery">Galeria zdjęć</a>
+        </li>
+    </nav>
     <img src="~/obraz1.jpg" alt="boisko">
 </header>
 @RenderBody()

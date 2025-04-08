@@ -62,4 +62,30 @@ public class FootballRepo {
         connection.Close();
         return players;
     }
+    public List<byte[]> GetImages() {
+        MySqlConnection connection = new MySqlConnection(_connectionString);
+        MySqlCommand command = connection.CreateCommand();
+        command.CommandText = $"SELECT *, length(plik) as 'imageLength' FROM `zdjecia`";
+        connection.Open();
+        MySqlDataReader dataReader = command.ExecuteReader();
+        List<byte[]> images = new List<byte[]>();
+        while (dataReader.Read()) {
+            int bufferSize = dataReader.GetInt32("imageLength");
+            byte[] imageBytes = new byte[bufferSize];
+            dataReader.GetBytes(1, 0, imageBytes, 0, bufferSize);
+            images.Add(imageBytes);
+        }
+        return images;
+    }
+    public void AddImage(IFormFile image) {
+        MySqlConnection connection = new MySqlConnection(_connectionString);
+        MySqlCommand command = connection.CreateCommand();
+        MemoryStream stream = new MemoryStream();
+        image.CopyTo(stream);
+        byte[] imageBytes = stream.ToArray();
+        command.CommandText = $"INSERT INTO `zdjecia`(`plik`) VALUES({imageBytes})";
+        connection.Open();
+        command.ExecuteNonQuery();
+        connection.Close();
+    }
 }

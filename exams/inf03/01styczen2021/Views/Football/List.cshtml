@@ -18,7 +18,6 @@
     <h2>Reprezantacja Polski</h2>
     <div id="middle">
         <div id="left">
-            <a asp-action="Index">Wyszukaj na podstawie pozycji</a>
             <ul>
                 @foreach (Player player in Model) {
                     <li>@player.FirstName @player.LastName - @player.Position</li>
