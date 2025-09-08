@@ -1,0 +1,7 @@
+﻿@model List<Book>
+<h3>Strona Index</h3>
+@foreach (var b in Model){
+    <div>
+        <p>@b.Id - @b.Title - @b.Author - @b.PublishedDate.ToLongDateString()</p>
+    </div>
+}

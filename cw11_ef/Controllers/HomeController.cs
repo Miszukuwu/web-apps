@@ -1,0 +1,28 @@
+using cw11_ef.Models;
+using Microsoft.AspNetCore.Mvc;
+
+namespace cw11_ef.Controllers
+{
+    public class HomeController : Controller
+    {
+        private readonly BooksContext _context;
+        public HomeController(BooksContext context)
+        {
+            _context = context;
+        }
+        // GET: HomeController
+        public ActionResult Index()
+        {
+            var books = _context.Books.ToList();
+            return View(books);
+        }
+        public IActionResult AddNew()
+        {
+            var book = new Book { Id = 4, Title = "Nowa ksiazka", Author = "nowy autor", PublishedDate = DateTime.Now };
+            _context.Books.Add(book);
+            _context.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+    }
+}
