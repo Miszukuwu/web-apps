@@ -1,0 +1,14 @@
+﻿@model Editor
+<form asp-action="AddEditor" method="post">
+    <div class="row m-2">
+        <label class="col-3 text-end" asp-for="Name"></label>
+        <input class="col-6" type="text" asp-for="Name" name="Name" id="Name">
+        <span asp-validation-for="Name" class="col-3 text-danger"></span>
+    </div>
+    <div class="row m-2">
+        <label class="col-3 text-end" asp-for="Adress"></label>
+        <input class="col-6" type="text" asp-for="Adress" name="Adress" id="Adress">
+        <span asp-validation-for="Adress" class="col-3 text-danger"></span>
+    </div>
+    <button class="btn btn-primary col-6 offset-3" type="submit">Dodaj</button>
+</form>

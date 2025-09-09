@@ -9,6 +9,7 @@ public class BooksContext : DbContext
         : base(options)
     { }
     public DbSet<Book> Books { get; set; }
+    public DbSet<Editor> Editors { get; set; }
     //dodanie startowych danych
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -37,5 +38,32 @@ public class BooksContext : DbContext
                 PublishedDate = new DateTime(1937, 9, 21)
             }
         );
+        modelBuilder.Entity<Editor>().HasData(
+            new Editor
+            {
+                Id = 1,
+                Name = "Appress",
+                Adress = "ul. Wookkk, Kraków 31-161"
+            },
+            new Editor
+            {
+                Id = 2,
+                Name = "Skibid",
+                Adress = "ul. lik, Kraków 67-161"
+            },
+            new Editor
+            {
+                Id = 3,
+                Name = "Mustard",
+                Adress = "ul. daw, Kraków 31-543"
+            },
+            new Editor
+            {
+                Id = 4,
+                Name = "Mango",
+                Adress = "ul. kil, Kraków 31-811"
+            }
+        );
     }
+
 }

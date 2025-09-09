@@ -1,0 +1,19 @@
+﻿@model Book
+<form asp-action="AddBook" method="post">
+    <div class="row m-2">
+        <label class="col-3 text-end" asp-for="Title"></label>
+        <input class="col-6" type="text" asp-for="Title" name="Title" id="Title">
+        <span asp-validation-for="Title" class="col-3 text-danger"></span>
+    </div>
+    <div class="row m-2">
+        <label class="col-3 text-end" asp-for="Author"></label>
+        <input class="col-6" type="text" asp-for="Author" name="Author" id="Author">
+        <span asp-validation-for="Author" class="col-3 text-danger"></span>
+    </div>
+    <div class="row m-2">
+        <label class="col-3 text-end" asp-for="PublishedDate"></label>
+        <input class="col-6" type="date" asp-for="PublishedDate" name="PublishedDate" id="PublishedDate">
+        <span asp-validation-for="PublishedDate" class="col-3 text-danger"></span>
+    </div>
+    <button class="btn btn-primary col-6 offset-3" type="submit">Dodaj</button>
+</form>
