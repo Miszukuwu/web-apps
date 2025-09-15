@@ -1,0 +1,10 @@
+﻿@model Editor
+<form asp-action="DeleteEditor" method="post">
+    <h2>Czy napewno chcesz usunąć wydawcę: "@Model.Name"?</h2>
+    <input type="text" name="Name" id="Name" value="@Model.Name" hidden readonly>
+    <input type="text" name="Adress" id="Adress" value="@Model.Adress" hidden readonly>
+    <input type="number" name="Id" id="Id" value="@Model.Id" hidden readonly>
+
+    <a asp-action="Editors" class="btn btn-secondary">Anuluj</a>
+    <button class="btn btn-danger" type="submit">Usuń</button>
+</form>

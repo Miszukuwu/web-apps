@@ -41,7 +41,6 @@ namespace cw11_ef.Controllers
         [HttpPost]
         public IActionResult AddEditor(Editor editor)
         {
-            System.Console.WriteLine("nazwa " + editor.Name);
             if (ModelState.IsValid)
             {
                 _context.Editors.Add(editor);
@@ -50,9 +49,44 @@ namespace cw11_ef.Controllers
             }
             return View();
         }
-        public IActionResult DeleteEditor(int id)
+        [HttpGet]
+        public IActionResult UpdateEditor(int id)
         {
-            _context.Editors.Remove(_context.Editors.Find());
+            Editor? toEdit = _context.Editors.FirstOrDefault(item => item.Id == id);
+            if (toEdit != null)
+                return View(toEdit);
+            else
+                return RedirectToAction("Editors"); 
+        }
+        [HttpPost]
+        public IActionResult UpdateEditor(Editor editor)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Editors.Update(editor);
+                _context.SaveChanges();
+                return RedirectToAction("Editors");
+            }
+            return View(editor);
+        }
+        [HttpGet]
+        public IActionResult DeleteEditor(int? id)
+        {
+            Editor? toDelete = _context.Editors.FirstOrDefault(item => item.Id == id);
+            if (toDelete != null)
+            {
+                return View(toDelete);
+            }
+            return RedirectToAction("Editors");
+        }
+        [HttpPost]
+        public IActionResult DeleteEditor(Editor toDelete)
+        {
+            if (toDelete != null)
+            {
+                _context.Editors.Remove(toDelete);
+                _context.SaveChanges();
+            }
             return RedirectToAction("Editors");
         }
         public ActionResult Editors()
