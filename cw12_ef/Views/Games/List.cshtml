@@ -1,0 +1,24 @@
+﻿@model List<Game>
+
+<h1>List Of Games</h1>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Publisher</th>
+            <th>Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var game in Model)
+        {
+            <tr>
+                <td>@game.Id</td>
+                <td>@game.Title</td>
+                <td>@game.Publisher</td>
+                <td>$ @game.Price</td>
+            </tr>
+        }
+    </tbody>
+</table>
