@@ -18,6 +18,10 @@
                 <td>@game.Title</td>
                 <td>@game.Publisher</td>
                 <td>$ @game.Price</td>
+                <td>
+                    <a asp-action="EditGame" asp-route-id="@game.Id" class="btn btn-warning">Edit</a>
+                    <a asp-action="DeleteGame" asp-route-id="@game.Id" class="btn btn-danger">Delete</a>
+                </td>
             </tr>
         }
     </tbody>
