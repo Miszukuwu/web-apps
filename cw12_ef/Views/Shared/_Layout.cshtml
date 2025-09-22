@@ -7,6 +7,12 @@
     <title>Document</title>
 </head>
 <body>
+    <header>
+        <nav>
+            <a asp-action="List" class="btn btn-primary">Games List</a>
+            <a asp-action="AddGame" class="btn btn-primary">Add New Game</a>
+        </nav>
+    </header>
     <main>@RenderBody()</main>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
