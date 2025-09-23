@@ -11,10 +11,11 @@
         </tr>
     </thead>
     <tbody>
+    @{int lp = 1;}
         @foreach (var game in Model)
         {
             <tr>
-                <td>@game.Id</td>
+                <td>@lp</td>
                 <td>@game.Title</td>
                 <td>@game.Publisher</td>
                 <td>$ @game.Price</td>
@@ -23,6 +24,7 @@
                     <a asp-action="DeleteGame" asp-route-id="@game.Id" class="btn btn-danger">Delete</a>
                 </td>
             </tr>
+            lp++;
         }
     </tbody>
 </table>

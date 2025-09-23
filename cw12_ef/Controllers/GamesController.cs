@@ -28,9 +28,40 @@ namespace cw12_ef.Controllers
             {
                 _context.Games.Add(game);
                 _context.SaveChanges();
-                return RedirectToAction(nameof(List));
+                return RedirectToAction("List");
             }
             return View();
+        }
+        [HttpGet]
+        public IActionResult DeleteGame(int id)
+        {
+            Game? toDelete = _context.Games.FirstOrDefault(e => e.Id == id);
+            if (toDelete != null)
+            {
+                _context.Games.Remove(toDelete);
+                _context.SaveChanges();
+            }
+            return RedirectToAction("List");
+        }
+        [HttpGet]
+        public IActionResult EditGame(int id)
+        {
+            Game? toEdit = _context.Games.FirstOrDefault(e => e.Id == id);
+            if (toEdit != null)
+            {
+                return View(toEdit);
+            }
+            return RedirectToAction("List");
+        }
+        [HttpPost]
+        public IActionResult EditGame(Game game)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Games.Update(game);
+                _context.SaveChanges();
+            }
+            return RedirectToAction("List");
         }
     }
 }
